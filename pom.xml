@@ -3,4 +3,17 @@
   <groupId>mytwitterapi</groupId>
   <artifactId>mytwitterapy-core</artifactId>
   <version>0.1</version>
+  
+  <dependencies>
+  	<dependency>
+		<groupId>org.json</groupId>
+		<artifactId>json</artifactId>
+		<version>20140107</version>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-api</artifactId>
+		<version>1.7.7</version>
+	</dependency>
+  </dependencies>
 </project>
