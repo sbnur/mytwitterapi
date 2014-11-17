@@ -46,7 +46,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/account/settings">POST account/settings | Twitter Developers</a>
      * @since Twitter4J 2.2.4
      */
-    AccountSettings updateAccountSettings(Integer trendLocationWoeid, Boolean sleepTimeEnabled, String startSleepTime, String endSleepTime, String timeZone, String lang) throws TwitterException;
+    //AccountSettings updateAccountSettings(Integer trendLocationWoeid, Boolean sleepTimeEnabled, String startSleepTime, String endSleepTime, String timeZone, String lang) throws TwitterException;
 
     // update delivery device
 
@@ -63,8 +63,8 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/account/update_profile">POST account/update_profile | Twitter Developers</a>
      * @since Twitter4J 2.1.8
      */
-    User updateProfile(String name, String url, String location, String description)
-            throws TwitterException;
+     //User updateProfile(String name, String url, String location, String description)
+     //       throws TwitterException;
 
     /**
      * Updates the authenticating user's profile background image.
@@ -79,8 +79,8 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/account/update_profile_background_image">POST account/update_profile_background_image | Twitter Developers</a>
      * @since Twitter4J 2.1.0
      */
-    User updateProfileBackgroundImage(File image, boolean tile)
-            throws TwitterException;
+     //User updateProfileBackgroundImage(File image, boolean tile)
+     //       throws TwitterException;
 
     /**
      * Updates the authenticating user's profile background image.
@@ -95,8 +95,8 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/account/update_profile_background_image">POST account/update_profile_background_image | Twitter Developers</a>
      * @since Twitter4J 2.1.11
      */
-    User updateProfileBackgroundImage(InputStream image, boolean tile)
-            throws TwitterException;
+     //User updateProfileBackgroundImage(InputStream image, boolean tile)
+     //        throws TwitterException;
 
     /**
      * Sets one or more hex values that control the color scheme of the authenticating user's profile page on twitter.com. Each parameter's value must be a valid hexidecimal value, and may be either three or six characters (ex: #fff or #ffffff).
@@ -112,8 +112,8 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/account/update_profile_colors">POST account/update_profile_colors | Twitter Developers</a>
      * @since Twitter4J 2.0.0
      */
-    User updateProfileColors(String profileBackgroundColor, String profileTextColor, String profileLinkColor, String profileSidebarFillColor, String profileSidebarBorderColor)
-            throws TwitterException;
+    //User updateProfileColors(String profileBackgroundColor, String profileTextColor, String profileLinkColor, String profileSidebarFillColor, String profileSidebarBorderColor)
+     //       throws TwitterException;
 
     /**
      * Updates the authenticating user's profile image.
@@ -127,7 +127,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/account/update_profile_image">POST account/update_profile_image | Twitter Developers</a>
      * @since Twitter4J 2.1.0
      */
-    User updateProfileImage(File image) throws TwitterException;
+    //User updateProfileImage(File image) throws TwitterException;
 
     /**
      * Updates the authenticating user's profile image.
@@ -141,7 +141,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/account/update_profile_image">POST account/update_profile_image | Twitter Developers</a>
      * @since Twitter4J 2.1.11
      */
-    User updateProfileImage(InputStream image) throws TwitterException;
+    //User updateProfileImage(InputStream image) throws TwitterException;
 
     /**
      * Returns a list of user objects that the authenticating user is blocking.
@@ -152,7 +152,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/blocks/blocking">GET blocks/blocking | Twitter Developers</a>
      * @since Twitter4J 2.0.4
      */
-    PagableResponseList<User> getBlocksList() throws TwitterException;
+    //PagableResponseList<User> getBlocksList() throws TwitterException;
 
     /**
      * Returns a list of user objects that the authenticating user is blocking.
@@ -164,7 +164,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/blocks/blocking">GET blocks/blocking | Twitter Developers</a>
      * @since Twitter4J 2.0.4
      */
-    PagableResponseList<User> getBlocksList(long cursor) throws TwitterException;
+    //PagableResponseList<User> getBlocksList(long cursor) throws TwitterException;
 
     /**
      * Returns an array of numeric user ids the authenticating user is blocking.
@@ -175,7 +175,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/blocks/ids">GET blocks/ids | Twitter Developers</a>
      * @since Twitter4J 2.0.4
      */
-    IDs getBlocksIDs() throws TwitterException;
+    //IDs getBlocksIDs() throws TwitterException;
 
     /**
      * Returns an array of numeric user ids the authenticating user is blocking.
@@ -186,7 +186,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/blocks/ids">GET blocks/ids | Twitter Developers</a>
      * @since Twitter4J 3.0.2
      */
-    IDs getBlocksIDs(long cursor) throws TwitterException;
+    //IDs getBlocksIDs(long cursor) throws TwitterException;
 
     /**
      * Blocks the user specified in the ID parameter as the authenticating user.  Returns the blocked user in the requested format when successful.
@@ -198,7 +198,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/blocks/create">POST blocks/create | Twitter Developers</a>
      * @since Twitter4J 2.1.0
      */
-    User createBlock(long userId) throws TwitterException;
+    //User createBlock(long userId) throws TwitterException;
 
     /**
      * Blocks the user specified in the ID parameter as the authenticating user.  Returns the blocked user in the requested format when successful.
@@ -210,7 +210,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/blocks/create">POST blocks/create | Twitter Developers</a>
      * @since Twitter4J 2.0.1
      */
-    User createBlock(String screenName) throws TwitterException;
+    //User createBlock(String screenName) throws TwitterException;
 
     /**
      * Un-blocks the user specified in the ID parameter as the authenticating user.  Returns the un-blocked user in the requested format when successful.
@@ -222,7 +222,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/blocks/destroy">POST blocks/destroy | Twitter Developers</a>
      * @since Twitter4J 2.0.1
      */
-    User destroyBlock(long userId) throws TwitterException;
+    //User destroyBlock(long userId) throws TwitterException;
 
     /**
      * Un-blocks the user specified in the ID parameter as the authenticating user.  Returns the un-blocked user in the requested format when successful.
@@ -234,7 +234,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/blocks/destroy">POST blocks/destroy | Twitter Developers</a>
      * @since Twitter4J 2.0.1
      */
-    User destroyBlock(String screen_name) throws TwitterException;
+    //User destroyBlock(String screen_name) throws TwitterException;
 
     /**
      * Returns a list of user objects that the authenticating user is muting.
@@ -246,7 +246,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/mutes/users/list">GET blocks/blocking | Twitter Developers</a>
      * @since Twitter4J 4.0.2
      */
-    PagableResponseList<User> getMutesList(long cursor) throws TwitterException;
+    //PagableResponseList<User> getMutesList(long cursor) throws TwitterException;
 
     /**
      * Returns an array of numeric user ids the authenticating user is muting.
@@ -258,7 +258,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/mutes/users/ids">GET blocks/ids | Twitter Developers</a>
      * @since Twitter4J 4.0.2
      */
-    IDs getMutesIDs(long cursor) throws TwitterException;
+    //IDs getMutesIDs(long cursor) throws TwitterException;
 
     /**
      * Mutes the user specified in the ID parameter as the authenticating user.  Returns the muted user in the requested format when successful.
@@ -270,7 +270,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/mutes/users/create">POST mutes/users/create | Twitter Developers</a>
      * @since Twitter4J 4.0.2
      */
-    User createMute(long userId) throws TwitterException;
+    //User createMute(long userId) throws TwitterException;
 
     /**
      * Mutes the user specified in the screen name parameter as the authenticating user.  Returns the muted user in the requested format when successful.
@@ -282,7 +282,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/mutes/users/create">POST mutes/users/create | Twitter Developers</a>
      * @since Twitter4J 4.0.2
      */
-    User createMute(String screenName) throws TwitterException;
+    //User createMute(String screenName) throws TwitterException;
 
     /**
      * Un-mutes the user specified in the ID parameter as the authenticating user.  Returns the un-muted user in the requested format when successful.
@@ -294,7 +294,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/mutes/users/destroy">POST mutes/users/destroy | Twitter Developers</a>
      * @since Twitter4J 4.0.2
      */
-    User destroyMute(long userId) throws TwitterException;
+    //User destroyMute(long userId) throws TwitterException;
 
     /**
      * Un-mutes the user specified in the screen name parameter as the authenticating user.  Returns the un-muted user in the requested format when successful.
@@ -306,7 +306,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/mutes/users/destroy">POST mutes/users/destroy | Twitter Developers</a>
      * @since Twitter4J 4.0.2
      */
-    User destroyMute(String screenName) throws TwitterException;
+    //User destroyMute(String screenName) throws TwitterException;
 
     /**
      * Return up to 100 users worth of extended information, specified by either ID, screen name, or combination of the two. The author's most recent status (if the authenticating user has permission) will be returned inline.
@@ -318,7 +318,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/users/lookup">GET users/lookup | Twitter Developers</a>
      * @since Twitter4J 2.1.1
      */
-    ResponseList<User> lookupUsers(long[] ids) throws TwitterException;
+    //ResponseList<User> lookupUsers(long[] ids) throws TwitterException;
 
     /**
      * Return up to 100 users worth of extended information, specified by either ID, screen name, or combination of the two. The author's most recent status (if the authenticating user has permission) will be returned inline.
@@ -330,7 +330,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/users/lookup">GET users/lookup | Twitter Developers</a>
      * @since Twitter4J 2.1.1
      */
-    ResponseList<User> lookupUsers(String[] screenNames) throws TwitterException;
+    //ResponseList<User> lookupUsers(String[] screenNames) throws TwitterException;
 
     /**
      * Returns extended information of a given user, specified by ID or screen name as per the required id parameter. The author's most recent status will be returned inline.
@@ -366,7 +366,7 @@ public interface UsersResources {
      * @throws TwitterException when Twitter service or network is unavailable
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/users/search">GET users/search | Twitter Developers</a>
      */
-    ResponseList<User> searchUsers(String query, int page) throws TwitterException;
+    //ResponseList<User> searchUsers(String query, int page) throws TwitterException;
 
     /**
      * Returns an array of users that the specified user can contribute to.
@@ -377,7 +377,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/users/contributees">GET users/contributors | Twitter Developers</a>
      * @since Twitter4J 3.0.0
      */
-    ResponseList<User> getContributees(long userId) throws TwitterException;
+    //ResponseList<User> getContributees(long userId) throws TwitterException;
 
     /**
      * Returns an array of users that the specified user can contribute to.
@@ -388,7 +388,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/users/contributees">GET users/contributors | Twitter Developers</a>
      * @since Twitter4J 3.0.0
      */
-    ResponseList<User> getContributees(String screenName) throws TwitterException;
+    //ResponseList<User> getContributees(String screenName) throws TwitterException;
 
     /**
      * Returns an array of users who can contribute to the specified account.
@@ -399,7 +399,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/users/contributors">GET users/contributors | Twitter Developers</a>
      * @since Twitter4J 3.0.0
      */
-    ResponseList<User> getContributors(long userId) throws TwitterException;
+    //ResponseList<User> getContributors(long userId) throws TwitterException;
 
     /**
      * Returns an array of users who can contribute to the specified account.
@@ -410,7 +410,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/get/users/contributors">GET users/contributors | Twitter Developers</a>
      * @since Twitter4J 3.0.0
      */
-    ResponseList<User> getContributors(String screenName) throws TwitterException;
+   // ResponseList<User> getContributors(String screenName) throws TwitterException;
 
     /**
      * Removes the uploaded profile banner for the authenticating user. Returns HTTP 200 upon success.
@@ -419,7 +419,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/account/remove_profile_banner">POST account/remove_profile_banner | Twitter Developers</a>
      * @since Twitter4J 3.0.0
      */
-    void removeProfileBanner() throws TwitterException;
+    //void removeProfileBanner() throws TwitterException;
 
     /**
      * Uploads a profile banner on behalf of the authenticating user. For best results, upload an <5MB image that is exactly 1252px by 626px. Images will be resized for a number of display options. Users with an uploaded profile banner will have a profile_banner_url node in their <a href="https://dev.twitter.com/docs/platform-objects/users">Users</a> objects. More information about sizing variations can be found in <a href="https://dev.twitter.com/docs/user-profile-images-and-banners">User Profile Images and Banners</a>.<br>
@@ -433,7 +433,7 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/account/update_profile_banner">POST account/update_profile_banner | Twitter Developers</a>
      * @since Twitter4J 3.0.0
      */
-    void updateProfileBanner(File image) throws TwitterException;
+    //void updateProfileBanner(File image) throws TwitterException;
 
     /**
      * Uploads a profile banner on behalf of the authenticating user. For best results, upload an <5MB image that is exactly 1252px by 626px. Images will be resized for a number of display options. Users with an uploaded profile banner will have a profile_banner_url node in their <a href="https://dev.twitter.com/docs/platform-objects/users">Users</a> objects. More information about sizing variations can be found in <a href="https://dev.twitter.com/docs/user-profile-images-and-banners">User Profile Images and Banners</a>.<br>
@@ -447,5 +447,5 @@ public interface UsersResources {
      * @see <a href="https://dev.twitter.com/docs/api/1.1/post/account/update_profile_banner">POST account/update_profile_banner | Twitter Developers</a>
      * @since Twitter4J 3.0.0
      */
-    void updateProfileBanner(InputStream image) throws TwitterException;
+    //void updateProfileBanner(InputStream image) throws TwitterException;
 }

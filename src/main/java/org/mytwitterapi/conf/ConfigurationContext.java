@@ -7,8 +7,8 @@ package org.mytwitterapi.conf;
  * @author Yusuke Yamamoto - yusuke at mac.com
  */
 public final class ConfigurationContext {
-    private static final String DEFAULT_CONFIGURATION_FACTORY = "twitter4j.conf.PropertyConfigurationFactory";
-    private static final String CONFIGURATION_IMPL = "twitter4j.configurationFactory";
+    private static final String DEFAULT_CONFIGURATION_FACTORY = "org.mytwitterapi.conf.PropertyConfigurationFactory";
+    private static final String CONFIGURATION_IMPL = "org.mytwitterapi.configurationFactory";
     private static final ConfigurationFactory factory;
 
     static {

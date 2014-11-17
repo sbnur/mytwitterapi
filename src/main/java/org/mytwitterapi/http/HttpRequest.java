@@ -3,7 +3,7 @@ package org.mytwitterapi.http;
 import java.util.Arrays;
 import java.util.Map;
 
-import org.mytwitterapi.Authorization;
+import org.mytwitterapi.auth.Authorization;
 
 /**
  * HTTP Request parameter object

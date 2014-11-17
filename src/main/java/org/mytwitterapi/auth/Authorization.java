@@ -1,4 +1,4 @@
-package org.mytwitterapi;
+package org.mytwitterapi.auth;
 
 import org.mytwitterapi.http.HttpRequest;
 

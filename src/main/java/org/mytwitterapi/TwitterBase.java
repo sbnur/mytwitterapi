@@ -1,5 +1,6 @@
 package org.mytwitterapi;
 
+import org.mytwitterapi.auth.Authorization;
 import org.mytwitterapi.conf.Configuration;
 
 /**
