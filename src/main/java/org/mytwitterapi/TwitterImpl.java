@@ -16,6 +16,8 @@ import org.mytwitterapi.auth.Authorization;
 import org.mytwitterapi.conf.Configuration;
 import org.mytwitterapi.http.HttpParameter;
 import org.mytwitterapi.http.HttpResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -26,6 +28,8 @@ import org.mytwitterapi.http.HttpResponse;
  * @author Yusuke Yamamoto - yusuke at mac.com
  */
 class TwitterImpl extends TwitterBaseImpl implements Twitter {
+	private static Logger logger = LoggerFactory.getLogger(TwitterBaseImpl.class);
+	
     private static final long serialVersionUID = 9170943084096085770L;
     private final String IMPLICIT_PARAMS_STR;
     private final HttpParameter[] IMPLICIT_PARAMS;

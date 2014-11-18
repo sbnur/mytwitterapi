@@ -111,7 +111,11 @@ final class ParseUtil {
     }
 
     public static int getInt(String name, JSONObject json) {
-        return getInt(getRawString(name, json));
+        try{
+        	return json.getInt(name);
+        }catch (JSONException jsonexception) {
+        	return -1;
+        }
     }
 
     public static int getInt(String str) {
@@ -128,7 +132,12 @@ final class ParseUtil {
     }
 
     public static long getLong(String name, JSONObject json) {
-        return getLong(getRawString(name, json));
+    	try{
+    		return json.getLong(name);
+    	}
+    	catch(JSONException jsonexception){
+    		return -1;
+    	}
     }
 
     public static long getLong(String str) {
@@ -173,20 +182,20 @@ final class ParseUtil {
         } else {
             // https://dev.twitter.com/pages/application-permission-model-faq#how-do-we-know-what-the-access-level-of-a-user-token-is
             switch (xAccessLevel.length()) {
-                // “read” (Read-only)
+                // â€œreadâ€� (Read-only)
                 case 4:
                     accessLevel = TwitterResponse.READ;
                     break;
                 case 10:
-                    // “read-write” (Read & Write)
+                    // â€œread-writeâ€� (Read & Write)
                     accessLevel = TwitterResponse.READ_WRITE;
                     break;
                 case 25:
-                    // “read-write-directmessages” (Read, Write, & Direct Message)
+                    // â€œread-write-directmessagesâ€� (Read, Write, & Direct Message)
                     accessLevel = TwitterResponse.READ_WRITE_DIRECTMESSAGES;
                     break;
                 case 26:
-                    // “read-write-privatemessages” (Read, Write, & Direct Message)
+                    // â€œread-write-privatemessagesâ€� (Read, Write, & Direct Message)
                     accessLevel = TwitterResponse.READ_WRITE_DIRECTMESSAGES;
                     break;
                 default:

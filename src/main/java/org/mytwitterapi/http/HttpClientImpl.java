@@ -64,6 +64,7 @@ class HttpClientImpl extends HttpClientBase implements HttpResponseCode, java.io
     }
 
     public HttpResponse get(String url) throws TwitterException {
+    	logger.info("Making request: " + url);
         return request(new HttpRequest(RequestMethod.GET, url, null, null, null));
     }
 
@@ -73,6 +74,7 @@ class HttpClientImpl extends HttpClientBase implements HttpResponseCode, java.io
 
     @Override
     public HttpResponse handleRequest(HttpRequest req) throws TwitterException {
+    	logger.info("Handling request: " + "url:" + req.getURL() + "\n" + "parameters:" + req.getParameters());
         int retriedCount;
         int retry = CONF.getHttpRetryCount() + 1;
         HttpResponse res = null;
@@ -185,6 +187,7 @@ class HttpClientImpl extends HttpClientBase implements HttpResponseCode, java.io
                 //nothing to do
             }
         }
+        logger.debug("Response: \n" + res);
         return res;
     }
 
