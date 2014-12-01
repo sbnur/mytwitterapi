@@ -1,6 +1,7 @@
 package org.mytwitterapi.conf;
 
 import static org.junit.Assert.assertEquals;
+import mytwitterapi.conf.PropertyConfiguration;
 
 import org.junit.Test;
 
