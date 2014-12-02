@@ -24,8 +24,7 @@ public interface Twitter extends java.io.Serializable,
 /*
  * OAuthSupport, OAuth2Support,
  */
-TwitterBase, TimelinesResources,
-/* TweetsResources, */
+TwitterBase, TimelinesResources, TweetsResources,
 /*
  * SearchResource, DirectMessagesResources, FriendsFollowersResources,
  */
@@ -42,12 +41,12 @@ HelpResources
 	/**
 	 * @since Twitter4J 3.0.4
 	 */
-	/* TimelinesResources timelines(); */
+	TimelinesResources timelines();
 
 	/**
 	 * @since Twitter4J 3.0.4
 	 */
-	/* TweetsResources tweets(); */
+	TweetsResources tweets();
 
 	/**
 	 * @since Twitter4J 3.0.4

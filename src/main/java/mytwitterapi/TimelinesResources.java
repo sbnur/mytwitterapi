@@ -6,14 +6,17 @@ package mytwitterapi;
 public interface TimelinesResources {
 	/**
 	 * Returns the 20 most recent mentions (tweets containing a users's
+	 * 
 	 * @screen_name) for the authenticating user.<br>
-	 * The timeline returned is the equivalent of the one seen when you view
-	 * your mentions on twitter.com.<br>
-	 * This method can only return up to 800 tweets.<br>
-	 * See <a
-	 * href="https://dev.twitter.com/docs/working-with-timelines"></a>Working
-	 * with Timelines</a> for instructions on traversing timelines. <br>
-	 * This method calls https://api.twitter.com/1.1/statuses/mentions_timeline
+	 *               The timeline returned is the equivalent of the one seen
+	 *               when you view your mentions on twitter.com.<br>
+	 *               This method can only return up to 800 tweets.<br>
+	 *               See <a
+	 *               href="https://dev.twitter.com/docs/working-with-timelines"
+	 *               ></a>Working with Timelines</a> for instructions on
+	 *               traversing timelines. <br>
+	 *               This method calls
+	 *               https://api.twitter.com/1.1/statuses/mentions_timeline
 	 * 
 	 * @return the 20 most recent replies
 	 * @throws TwitterException
@@ -27,14 +30,17 @@ public interface TimelinesResources {
 
 	/**
 	 * Returns the 20 most recent mentions (tweets containing a users's
+	 * 
 	 * @screen_name) for the authenticating user.<br>
-	 * The timeline returned is the equivalent of the one seen when you view
-	 * your mentions on twitter.com.<br>
-	 * This method can only return up to 800 tweets.<br>
-	 * See <a
-	 * href="https://dev.twitter.com/docs/working-with-timelines"></a>Working
-	 * with Timelines</a> for instructions on traversing timelines. <br>
-	 * This method calls https://api.twitter.com/1.1/statuses/mentions_timeline
+	 *               The timeline returned is the equivalent of the one seen
+	 *               when you view your mentions on twitter.com.<br>
+	 *               This method can only return up to 800 tweets.<br>
+	 *               See <a
+	 *               href="https://dev.twitter.com/docs/working-with-timelines"
+	 *               ></a>Working with Timelines</a> for instructions on
+	 *               traversing timelines. <br>
+	 *               This method calls
+	 *               https://api.twitter.com/1.1/statuses/mentions_timeline
 	 * 
 	 * @param paging
 	 *            controls pagination. Supports since_id, max_id, zcount
@@ -107,7 +113,8 @@ public interface TimelinesResources {
 	 */
 	ResponseList<Status> getUserTimeline(long userId, Paging paging) throws TwitterException;
 
-	ResponseList<Status> getUserTimelineWithoutRetweets(long userId, Paging paging) throws TwitterException;
+	ResponseList<Status> getUserTimelineWithoutRepliesWithoutNativeRetweetsTrimmedUser(long userId, Paging paging)
+			throws TwitterException;
 
 	/**
 	 * Returns the 20 most recent statuses posted from the authenticating user.

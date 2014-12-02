@@ -84,160 +84,144 @@ class TwitterImpl extends TwitterBaseImpl implements Twitter {
 		return factory.createStatusList(get(conf.getRestBaseURL() + "statuses/mentions_timeline.json"));
 	}
 
-	/*
-	 * @Override public ResponseList<Status> getMentionsTimeline(Paging paging)
-	 * throws TwitterException { return
-	 * factory.createStatusList(get(conf.getRestBaseURL() +
-	 * "statuses/mentions_timeline.json", paging.asPostParameterArray())); }
-	 */
+	@Override
+	public ResponseList<Status> getMentionsTimeline(Paging paging) throws TwitterException {
+		return factory.createStatusList(get(conf.getRestBaseURL() + "statuses/mentions_timeline.json",
+				paging.asPostParameterArray()));
+	}
 
-	/*
-	 * @Override public ResponseList<Status> getHomeTimeline() throws
-	 * TwitterException { return
-	 * factory.createStatusList(get(conf.getRestBaseURL() +
-	 * "statuses/home_timeline.json", new HttpParameter[]{INCLUDE_MY_RETWEET}));
-	 * }
-	 */
+	@Override
+	public ResponseList<Status> getHomeTimeline() throws TwitterException {
+		return factory.createStatusList(get(conf.getRestBaseURL() + "statuses/home_timeline.json",
+				new HttpParameter[] { INCLUDE_MY_RETWEET }));
+	}
 
-	/*
-	 * @Override public ResponseList<Status> getHomeTimeline(Paging paging)
-	 * throws TwitterException { return
-	 * factory.createStatusList(get(conf.getRestBaseURL() +
-	 * "statuses/home_timeline.json",
-	 * mergeParameters(paging.asPostParameterArray(), new
-	 * HttpParameter[]{INCLUDE_MY_RETWEET}))); }
-	 */
+	@Override
+	public ResponseList<Status> getHomeTimeline(Paging paging) throws TwitterException {
+		return factory.createStatusList(get(conf.getRestBaseURL() + "statuses/home_timeline.json",
+				mergeParameters(paging.asPostParameterArray(), new HttpParameter[] { INCLUDE_MY_RETWEET })));
+	}
 
-	/*
-	 * public ResponseList<Status> getRetweetsOfMe() throws TwitterException {
-	 * return factory.createStatusList(get(conf.getRestBaseURL() +
-	 * "statuses/retweets_of_me.json")); }
-	 */
+	@Override
+	public ResponseList<Status> getRetweetsOfMe() throws TwitterException {
+		return factory.createStatusList(get(conf.getRestBaseURL() + "statuses/retweets_of_me.json"));
+	}
 
-	/*
-	 * public ResponseList<Status> getRetweetsOfMe(Paging paging) throws
-	 * TwitterException { return
-	 * factory.createStatusList(get(conf.getRestBaseURL() +
-	 * "statuses/retweets_of_me.json", paging.asPostParameterArray())); }
-	 */
+	@Override
+	public ResponseList<Status> getRetweetsOfMe(Paging paging) throws TwitterException {
+		return factory.createStatusList(get(conf.getRestBaseURL() + "statuses/retweets_of_me.json", paging.asPostParameterArray()));
+	}
 
-	/*
-	 * @Override public ResponseList<Status> getUserTimeline(String screenName,
-	 * Paging paging) throws TwitterException { return
-	 * factory.createStatusList(get(conf.getRestBaseURL() +
-	 * "statuses/user_timeline.json", mergeParameters(new HttpParameter[]{new
-	 * HttpParameter("screen_name", screenName) , INCLUDE_MY_RETWEET} ,
-	 * paging.asPostParameterArray()) )); }
-	 */
+	@Override
+	public ResponseList<Status> getUserTimeline(String screenName, Paging paging) throws TwitterException {
+		return factory.createStatusList(get(
+				conf.getRestBaseURL() + "statuses/user_timeline.json",
+				mergeParameters(new HttpParameter[] { new HttpParameter("screen_name", screenName), INCLUDE_MY_RETWEET },
+						paging.asPostParameterArray())));
+	}
 
-	/*
-	 * @Override public ResponseList<Status> getUserTimeline(long userId, Paging
-	 * paging) throws TwitterException { return
-	 * factory.createStatusList(get(conf.getRestBaseURL() +
-	 * "statuses/user_timeline.json", mergeParameters(new HttpParameter[]{new
-	 * HttpParameter("user_id", userId) , INCLUDE_MY_RETWEET} ,
-	 * paging.asPostParameterArray()) )); }
-	 */
+	@Override
+	public ResponseList<Status> getUserTimeline(long userId, Paging paging) throws TwitterException {
+		return factory.createStatusList(get(
+				conf.getRestBaseURL() + "statuses/user_timeline.json",
+				mergeParameters(new HttpParameter[] { new HttpParameter("user_id", userId), INCLUDE_MY_RETWEET },
+						paging.asPostParameterArray())));
+	}
 
-	/*
-	 * @Override public ResponseList<Status> getUserTimeline(String screenName)
-	 * throws TwitterException { return getUserTimeline(screenName, new
-	 * Paging()); }
-	 */
+	@Override
+	public ResponseList<Status> getUserTimeline(String screenName) throws TwitterException {
+		return getUserTimeline(screenName, new Paging());
+	}
 
-	/*
-	 * @Override public ResponseList<Status> getUserTimeline(long userId) throws
-	 * TwitterException { return getUserTimeline(userId, new Paging()); }
-	 */
+	@Override
+	public ResponseList<Status> getUserTimeline(long userId) throws TwitterException {
+		return getUserTimeline(userId, new Paging());
+	}
 
-	/*
-	 * @Override public ResponseList<Status> getUserTimeline() throws
-	 * TwitterException { return getUserTimeline(new Paging()); }
-	 */
+	@Override
+	public ResponseList<Status> getUserTimelineWithoutRepliesWithoutNativeRetweetsTrimmedUser(long userId, Paging paging)
+			throws TwitterException {
+		return factory.createStatusList(get(
+				conf.getRestBaseURL() + "statuses/user_timeline.json",
+				mergeParameters(new HttpParameter[] { new HttpParameter("user_id", userId),
+						new HttpParameter("exclude_replies", "true"), new HttpParameter("include_rts", "false"),
+						new HttpParameter("trim_user", "true"), INCLUDE_MY_RETWEET }, paging.asPostParameterArray())));
+	}
 
-	/*
-	 * @Override public ResponseList<Status> getUserTimeline(Paging paging)
-	 * throws TwitterException { return
-	 * factory.createStatusList(get(conf.getRestBaseURL() +
-	 * "statuses/user_timeline.json", mergeParameters(new
-	 * HttpParameter[]{INCLUDE_MY_RETWEET} , paging.asPostParameterArray()) ));
-	 * }
-	 */
+	@Override
+	public ResponseList<Status> getUserTimeline() throws TwitterException {
+		return getUserTimeline(new Paging());
+	}
 
-	/* Tweets Resources */
+	@Override
+	public ResponseList<Status> getUserTimeline(Paging paging) throws TwitterException {
+		return factory.createStatusList(get(conf.getRestBaseURL() + "statuses/user_timeline.json",
+				mergeParameters(new HttpParameter[] { INCLUDE_MY_RETWEET }, paging.asPostParameterArray())));
+	}
 
-	/*
-	 * @Override public ResponseList<Status> getRetweets(long statusId) throws
-	 * TwitterException { return
-	 * factory.createStatusList(get(conf.getRestBaseURL() + "statuses/retweets/"
-	 * + statusId + ".json?count=100")); }
-	 */
+	// Tweets Resources
 
-	/*
-	 * @Override public IDs getRetweeterIds(long statusId, long cursor) throws
-	 * TwitterException { return getRetweeterIds(statusId, 100, cursor); }
-	 */
+	@Override
+	public ResponseList<Status> getRetweets(long statusId) throws TwitterException {
+		return factory.createStatusList(get(conf.getRestBaseURL() + "statuses/retweets/" + statusId + ".json?count=100"));
+	}
 
-	/*
-	 * @Override public IDs getRetweeterIds(long statusId, int count, long
-	 * cursor) throws TwitterException { return
-	 * factory.createIDs(get(conf.getRestBaseURL() +
-	 * "statuses/retweeters/ids.json?id=" + statusId + "&cursor=" + cursor +
-	 * "&count=" + count)); }
-	 */
+	@Override
+	public IDs getRetweeterIds(long statusId, long cursor) throws TwitterException {
+		return getRetweeterIds(statusId, 100, cursor);
+	}
 
-	/*
-	 * @Override public Status showStatus(long id) throws TwitterException {
-	 * return factory.createStatus(get(conf.getRestBaseURL() + "statuses/show/"
-	 * + id + ".json", new HttpParameter[]{INCLUDE_MY_RETWEET})); }
-	 */
+	@Override
+	public IDs getRetweeterIds(long statusId, int count, long cursor) throws TwitterException {
+		return factory.createIDs(get(conf.getRestBaseURL() + "statuses/retweeters/ids.json?id=" + statusId + "&cursor=" + cursor
+				+ "&count=" + count));
+	}
 
-	/*
-	 * @Override public Status destroyStatus(long statusId) throws
-	 * TwitterException { return factory.createStatus(post(conf.getRestBaseURL()
-	 * + "statuses/destroy/" + statusId + ".json")); }
-	 */
+	@Override
+	public Status showStatus(long id) throws TwitterException {
+		return factory.createStatus(get(conf.getRestBaseURL() + "statuses/show/" + id + ".json",
+				new HttpParameter[] { INCLUDE_MY_RETWEET }));
+	}
 
-	/*
-	 * @Override public Status updateStatus(String status) throws
-	 * TwitterException { return factory.createStatus(post(conf.getRestBaseURL()
-	 * + "statuses/update.json", new HttpParameter[]{new HttpParameter("status",
-	 * status)})); }
-	 */
+	@Override
+	public Status destroyStatus(long statusId) throws TwitterException {
+		return factory.createStatus(post(conf.getRestBaseURL() + "statuses/destroy/" + statusId + ".json"));
+	}
 
-	/*
-	 * @Override public Status updateStatus(StatusUpdate status) throws
-	 * TwitterException { String url = conf.getRestBaseURL() +
-	 * (status.isForUpdateWithMedia() ? "statuses/update_with_media.json" :
-	 * "statuses/update.json"); return factory.createStatus(post(url,
-	 * status.asHttpParameterArray())); }
-	 */
+	@Override
+	public Status updateStatus(String status) throws TwitterException {
+		return factory.createStatus(post(conf.getRestBaseURL() + "statuses/update.json", new HttpParameter[] { new HttpParameter(
+				"status", status) }));
+	}
 
-	/*
-	 * @Override public Status retweetStatus(long statusId) throws
-	 * TwitterException { return factory.createStatus(post(conf.getRestBaseURL()
-	 * + "statuses/retweet/" + statusId + ".json")); }
-	 */
+	@Override
+	public Status updateStatus(StatusUpdate status) throws TwitterException {
+		String url = conf.getRestBaseURL()
+				+ (status.isForUpdateWithMedia() ? "statuses/update_with_media.json" : "statuses/update.json");
+		return factory.createStatus(post(url, status.asHttpParameterArray()));
+	}
 
-	/*
-	 * @Override public OEmbed getOEmbed(OEmbedRequest req) throws
-	 * TwitterException { return factory.createOEmbed(get(conf.getRestBaseURL()
-	 * + "statuses/oembed.json", req.asHttpParameterArray())); }
-	 */
+	@Override
+	public Status retweetStatus(long statusId) throws TwitterException {
+		return factory.createStatus(post(conf.getRestBaseURL() + "statuses/retweet/" + statusId + ".json"));
+	}
 
-	/*
-	 * @Override public ResponseList<Status> lookup(long[] ids) throws
-	 * TwitterException { return
-	 * factory.createStatusList(get(conf.getRestBaseURL() +
-	 * "statuses/lookup.json?id=" + StringUtil.join(ids))); }
-	 */
+	@Override
+	public OEmbed getOEmbed(OEmbedRequest req) throws TwitterException {
+		return factory.createOEmbed(get(conf.getRestBaseURL() + "statuses/oembed.json", req.asHttpParameterArray()));
+	}
 
-	/*
-	 * @Override public UploadedMedia uploadMedia(File image) throws
-	 * TwitterException { checkFileValidity(image); return new
-	 * UploadedMedia(post(conf.getUploadBaseURL() + "media/upload.json" , new
-	 * HttpParameter[]{new HttpParameter("media", image)}).asJSONObject()); }
-	 */
+	@Override
+	public ResponseList<Status> lookup(long[] ids) throws TwitterException {
+		return factory.createStatusList(get(conf.getRestBaseURL() + "statuses/lookup.json?id=" + StringUtil.join(ids)));
+	}
+
+	@Override
+	public UploadedMedia uploadMedia(File image) throws TwitterException {
+		checkFileValidity(image);
+		return new UploadedMedia(post(conf.getUploadBaseURL() + "media/upload.json",
+				new HttpParameter[] { new HttpParameter("media", image) }).asJSONObject());
+	}
 
 	/* Search Resources */
 	/*
@@ -1565,13 +1549,15 @@ class TwitterImpl extends TwitterBaseImpl implements Twitter {
 				+ StringUtil.join(resources)));
 	}
 
-	/*
-	 * @Override public TimelinesResources timelines() { return this; }
-	 */
+	@Override
+	public TimelinesResources timelines() {
+		return this;
+	}
 
-	/*
-	 * @Override public TweetsResources tweets() { return this; }
-	 */
+	@Override
+	public TweetsResources tweets() {
+		return this;
+	}
 
 	/*
 	 * @Override public SearchResource search() { return this; }
@@ -1751,4 +1737,5 @@ class TwitterImpl extends TwitterBaseImpl implements Twitter {
 	public String toString() {
 		return "TwitterImpl{" + "INCLUDE_MY_RETWEET=" + INCLUDE_MY_RETWEET + '}';
 	}
+
 }

@@ -249,10 +249,10 @@ public class JSONImplFactory implements ObjectFactory {
 	 * new ResponseListImpl<T>(0, null); }
 	 */
 
-	/*
-	 * @Override public OEmbed createOEmbed(HttpResponse res) throws
-	 * TwitterException { return new OEmbedJSONImpl(res, conf); }
-	 */
+	@Override
+	public OEmbed createOEmbed(HttpResponse res) throws TwitterException {
+		return new OEmbedJSONImpl(res, conf);
+	}
 
 	/**
 	 * static factory method for twitter-text-java
